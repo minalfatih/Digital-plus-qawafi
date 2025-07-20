@@ -1,0 +1,638 @@
+      :root {
+    --primary-gold: #c6a059;
+    --light-gold: #e0be7d;
+    --off-white: #f5f5f5;   
+    --dark-brown: #4a3e2b;   
+    --pure-white: #ffffff;  
+    --shadow-color: rgba(0, 0, 0, 0.1);
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='88' viewBox='0 0 80 88' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 21.91V26h-2c-9.94 0-18 8.06-18 18 0 9.943 8.058 18 18 18h2v4.09c8.012.722 14.785 5.738 18 12.73 3.212-6.99 9.983-12.008 18-12.73V62h2c9.94 0 18-8.06 18-18 0-9.943-8.058-18-18-18h-2v-4.09c-8.012-.722-14.785-5.738-18-12.73-3.212 6.99-9.983 12.008-18 12.73zM54 58v4.696c-5.574 1.316-10.455 4.428-14 8.69-3.545-4.262-8.426-7.374-14-8.69V58h-5.993C12.27 58 6 51.734 6 44c0-7.732 6.275-14 14.007-14H26v-4.696c5.574-1.316 10.455-4.428 14-8.69 3.545 4.262 8.426 7.374 14 8.69V30h5.993C67.73 30 74 36.266 74 44c0 7.732-6.275 14-14.007 14H54zM42 88c0-9.94 8.06-18 18-18h2v-4.09c8.016-.722 14.787-5.738 18-12.73v7.434c-3.545 4.262-8.426 7.374-14 8.69V74h-5.993C52.275 74 46 80.268 46 88h-4zm-4 0c0-9.943-8.058-18-18-18h-2v-4.09c-8.012-.722-14.785-5.738-18-12.73v7.434c3.545 4.262 8.426 7.374 14 8.69V74h5.993C27.73 74 34 80.266 34 88h4zm4-88c0 9.943 8.058 18 18 18h2v4.09c8.012.722 14.785 5.738 18 12.73v-7.434c-3.545-4.262-8.426-7.374-14-8.69V14h-5.993C52.27 14 46 7.734 46 0h-4zM0 34.82c3.213-6.992 9.984-12.008 18-12.73V18h2c9.94 0 18-8.06 18-18h-4c0 7.732-6.275 14-14.007 14H14v4.696c-5.574 1.316-10.455 4.428-14 8.69v7.433z' fill='%23c4a15a' fill-opacity='0.09' fill-rule='evenodd'/%3E%3C/svg%3E");
+  font-family: 'Cairo', sans-serif;
+}
+body main {
+  overflow: hidden;
+}
+
+/* start button */
+.navbar-toggler {
+  display: none;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .navbar-toggler {
+    display: block;
+  }
+  .navbar-toggler .close {
+    display: none;
+  }
+  .navbar-toggler.active .hamburger {
+    display: none;
+  }
+  .navbar-toggler.active .close {
+    display: block;
+    position: relative;
+    z-index: 100;
+  }
+}
+
+/* end button */
+/* start see-all button */
+#see-all a {
+  background-color: var(--primary-gold);
+  color: white;
+  padding: 8px 20px;
+  font-size: 14px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  transition: .3s linear;
+}
+#see-all a:hover {
+  background-color: var(--dark-brown);
+  color: var(--off-white);
+}
+@media (max-width: 767px) {
+  #see-all a {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+/* end see-all button*/
+/* start header */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  max-width: 100%;
+}
+header .container .navbar-collapse {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+@media (max-width: 767px) {
+  header .container .navbar-collapse {
+    background-color: var(--primary-gold);
+    height: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: -100px;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+  header .container .navbar-collapse.active {
+    left: 0;
+    height: 100vh;
+    padding: 30px;
+  }
+}
+header .container .navbar-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 15px;
+  color: white;
+}
+@media (max-width: 767px) {
+  header .container .navbar-nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    width: 100%;
+  }
+  header .container .navbar-nav.active {
+    opacity: 1;
+    -webkit-transition: 0.3s 1s linear;
+    transition: 0.3s 1s linear;
+  }
+  header .container .navbar-nav .nav-item .nav-link {
+    font-size: 1.1rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+  }
+  header .container .navbar-nav .nav-item .nav-link::after {
+    content: "";
+    background-color: white;
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+    position: absolute;
+    left: 20px;
+    bottom: -7px;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+  }
+  header .container .navbar-nav .nav-item .nav-link:hover::after {
+    width: 30px;
+  }
+}
+
+/* end header */
+/*start footer*/
+footer {
+  background-color: var(--dark-brown);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/*end footer*/
+/* start landing */
+.landing {
+  background-image: url(/images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+          position: relative;
+}
+.landing::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 50%);
+  width: 100%;
+  height: 100%;
+}
+.landing .container {
+  color: white;
+  padding: 50px;
+  text-align: center;
+  z-index: 10;
+}
+
+.landing .container h1 {
+  color: var(--primary-gold);
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.landing .container p {
+  font-size: 1.2rem;
+}
+.landing .container > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.landing .container > div #lisiten {
+  background-color: white;
+  color: var(--dark-brown);
+  padding: 10px 20px;
+  border-radius: 6px;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: bold;
+}
+
+/* end landing */
+/* start info */
+section.info {
+  margin: 50px 20px;
+  background-color: white;
+  padding: 40px 20px;
+  border-radius: 6px;
+  box-shadow: var(--shadow-color);
+}
+section.info .container {
+  max-width: 100%;
+  text-align: right;
+}
+section.info .container p {
+  color: var(--dark-brown);
+}
+@media (max-width: 767px) {
+  section.info .container {
+    text-align: center;
+  }
+}
+
+/* end info */
+/* start player */
+.player {
+  margin: 50px 20px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .player {
+    padding-bottom: 50px;
+  }
+}
+.player .container {
+  max-width: 100%;
+}
+.player .container .audio-player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .player .container .audio-player {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+/* end player*/
+/* start audio */
+.audio-player {
+  margin: 50px 20px;
+}
+.audio-player .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.audio-player .container .audio-player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .audio-player .container .audio-player {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.audio-player .container .audio-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.05);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  max-width: 600px;
+  padding: 15px;
+  width: 100%;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.audio-player .container .audio-box .progress-circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+.audio-player .container .audio-box .progress-circle svg {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+.audio-player .container .audio-box .progress-circle svg circle {
+  fill: none;
+  stroke-width: 5;
+}
+.audio-player .container .audio-box .progress-circle svg .progress-bg {
+  stroke: #e0e0e0;
+}
+.audio-player .container .audio-box .progress-bar {
+  stroke: var(--primary-gold);
+  stroke-dashoffset: 157;
+  stroke-dasharray: 157;
+  transition: stroke-dashoffset 0.3s linear;
+  -webkit-transition: stroke-dashoffset 0.3s linear;
+  -moz-transition: stroke-dashoffset 0.3s linear;
+  -ms-transition: stroke-dashoffset 0.3s linear;
+  -o-transition: stroke-dashoffset 0.3s linear;
+}
+.audio-player .container .audio-box .play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  background-color: var(--primary-gold);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.audio-player .container .audio-box .info {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  margin: 10px;
+}
+.audio-player .container .audio-box .info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+.audio-player .container .audio-box .info small {
+  color: #777;
+}
+.audio-player .container .thumbnail {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+/* end audio */
+/* start operator */
+.operator {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(224,190,125, 50%);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+.operator .container {
+  max-width: 100%;
+  text-align: center;
+}
+
+.main-heading {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--dark-brown);
+    text-align: center;
+    margin-bottom: 35px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* زخرفة بسيطة تحت العنوان */
+.main-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-gold);
+    border-radius: 5px;
+}
+
+
+.subscription-options {
+    display: flex;
+    flex-direction: column; /* ترتيب الكتل عموديا */
+    gap: 25px; /* المسافة بين الكتل */
+}
+
+.provider-card {
+    background-color: var(--primary-gold); /* الخلفية الذهبية للكتلة */
+    border-radius: 12px; /* زوايا دائرية أكثر وضوحا */
+    padding: 25px; /* مسافة داخلية أكبر */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 6px 20px var(--shadow-color); /* ظل ناعم ليعطي عمق */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير الانتقال عند التفاعل */
+    height: 180px;
+}
+
+.provider-card:hover {
+    transform: translateY(-5px); /* رفع البطاقة قليلا عند المرور عليها */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* ظل أعمق */
+}
+
+.logo-container {
+    margin-bottom: 25px; /* مسافة بين الشعار والزر */
+}
+
+.logo-container img {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+.subscribe-button {
+    background-color: var(--pure-white); /* خلفية الزر بيضاء ناصعة */
+    color: var(--primary-gold); /* لون النص ذهبي */
+    font-size: 1.2em;
+    font-weight: 600; /* خط سميك للزر */
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px; /* زوايا دائرية للزر */
+    cursor: pointer;
+    width: 80%; /* عرض الزر */
+    max-width: 250px; /* أقصى عرض لضمان شكله */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* ظل للزر */
+}
+
+.subscribe-button:hover {
+    background-color: var(--light-gold); /* يتغير للذهبي الفاتح عند المرور */
+    color: var(--pure-white); /* يتغير لون النص للأبيض */
+    transform: translateY(-2px); /* يرتفع قليلا */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.subscribe-button:active {
+    transform: translateY(0); /* يعود لمكانه عند الضغط */
+    background-color: var(--dark-brown); /* يصبح بني غامق عند الضغط */
+    color: var(--pure-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* end operator */
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+.carousel-text {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.8em;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: fit-content; /* لتحديد العرض بناءً على المحتوى */
+}
+
+.carousel-slide {
+    flex-shrink: 0;
+    width: 350px; /* يجب أن يكون هذا 100% من عرض الـ container-track لكل شريحة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* ارتفاع ثابت للشرائح */
+    flex-direction: column;
+}
+.carousel-slide button {
+  background-color: var(--off-white);
+  color: var(--dark-brown);
+  font-weight: bold;
+  border-radius: 6px;
+  width: 80%;
+  padding: 8px;
+  margin: 30px 0 50px;
+}
+
+.carousel-slide img, .carousel-slide svg {
+    max-width: 60%;
+    max-height: 100%;
+    object-fit: contain; /* للحفاظ على نسبة العرض إلى الارتفاع */
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: var(--light-gold);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active {
+    background-color: var(--dark-brown);
+}
+
+/*# sourceMappingURL=style.css.map */
