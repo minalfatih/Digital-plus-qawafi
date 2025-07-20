@@ -74,11 +74,14 @@ body main {
 /* end see-all button*/
 /* start header */
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
+  background-color:rgba(0, 0, 0, 30%);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
 }
 header .container {
   display: -webkit-box;
@@ -92,6 +95,12 @@ header .container {
           align-items: center;
   padding: 20px;
   max-width: 100%;
+}
+header .container .navbar-brand img {
+  width: 60px;
+  position: relative;
+  bottom: 8px;
+  z-index: 100;
 }
 header .container .navbar-collapse {
   -ms-flex-preferred-size: 100%;
