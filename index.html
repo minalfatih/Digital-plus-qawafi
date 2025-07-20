@@ -1,0 +1,213 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./dist/aos.css" />
+    <link rel="stylesheet" href="./css/src/output.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Digital plus | qawafi</title>
+  </head>
+  <body
+    data-aos-easing="ease-in-out-sine"
+    data-aos-duration="400"
+    data-aos-delay="0"
+  >
+    <main class="">
+      <header class="">
+        <nav class="navbar navbar-expand-lg p-4 ps-lg-5 pe-lg-5">
+          <div
+            class="container ps-lg-5 pe-lg-5 flex-md-nowrap align-items-md-start"
+          >
+            <div class="navbar-brand">
+              <!-- <img class="img-fluid" src="images/logo.svg" alt="logo" /> -->
+              <p class="text-white">digital</p>
+            </div>
+            <button
+              class="navbar-toggler border-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#main"
+              aria-controls="main"
+              aria-expanded="false"
+              aria-label="Toggler navigation"
+            >
+              <img
+                class="hamburger"
+                src="images/icon-hamburger.svg"
+                alt="hamburger"
+              />
+              <img class="close" src="images/icon-close.svg" alt="close" />
+            </button>
+            <div class="navbar-collapse d-md-flex" id="main">
+              <ul class="navbar-nav ms-md-auto d-md-flex flex-md-row">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">استمع</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">اشترك</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">عن قوافي</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <section class="landing ps-lg-5 pe-lg-5">
+        <div class="container ps-lg-5 pe-lg-5 aos-init" data-aos="fade-up">
+          <h1 class="main-heading">قوافي...لأن الشعر لا يقرأ فقط بل يسمع</h1>
+          <p>
+            استمع الى مختارات من أجمل القصائد بصوت الشعراء أنفسهم متى ما أردت
+            نخبة من الشعراء تحت منبر واحد
+          </p>
+          <div>
+            <a href="#player" id="lisiten">ابدا الأستماع الاّن</a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="info ps-lg-5 pe-lg-5 aos-init aos-animate"
+        data-aos="zoom-out-up"
+      >
+        <div class="container ps-lg-5 pe-lg-5">
+          <div>
+            <h1 class="main-heading">قوافي للشعر منبع</h1>
+            <p>
+              قوافي هي بوابة قصائد بفئات مختلفة وعدد من الشعراء المشهورين
+              والناشئين. يمكن للمشتركين الاستماع الا شعائرهم المفضلين في اي وقت
+              وفي أي مكان عبر الانترنت
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="audio-player player" id="player" data-aos="fade-up">
+        <div class="container">
+          <div class="audio-player pt-5 pb-5 mb-4">
+            <div id="see-all">
+              <a href="#operator">المزيد</a>
+            </div>
+            <h1 class="main-heading">استمع الان</h1>
+          </div>
+          <div
+            class="audio-box"
+            data-aos="fade-up"
+            class="aos-init"
+            data-index="0"
+          >
+            <div class="progress-circle">
+              <svg width="60" height="60">
+                <circle class="progress-bg" cx="30" cy="30" r="25"></circle>
+                <circle class="progress-bar" cx="30" cy="30" r="25"></circle>
+              </svg>
+              <button class="play-btn">
+                <img src="./images/play-button-svgrepo-com.svg"/>
+              </button>
+            </div>
+            <div class="info">
+              <h3>الشاعر ربيع طه</h3>
+              <small>00:00 / 00:00</small>
+            </div>
+            <img class="thumbnail" src="./images/img1.jpg" alt="author" />
+            <audio src="./audio/audio.m4a"></audio>
+          </div>
+
+          <div
+            class="audio-box"
+            data-aos="fade-up"
+            class="aos-init"
+            data-index="1"
+          >
+            <div class="progress-circle">
+              <svg width="60" height="60">
+                <circle class="progress-bg" cx="30" cy="30" r="25"></circle>
+                <circle class="progress-bar" cx="30" cy="30" r="25"></circle>
+              </svg>
+               <button class="play-btn">
+                <img src="./images/play-button-svgrepo-com.svg"/>
+            </div>
+            <div class="info">
+              <h3>الشاعر</h3>
+              <small>00:00 / 00:00</small>
+            </div>
+            <img class="thumbnail" src="./images/img2.jpg" alt="author" />
+            <audio src="./audio/audio.m4a"></audio>
+          </div>
+
+          <div
+            class="audio-box"
+            data-aos="fade-up"
+            class="aos-init"
+            data-index="2"
+          >
+            <div class="progress-circle">
+              <svg width="60" height="60">
+                <circle class="progress-bg" cx="30" cy="30" r="25"></circle>
+                <circle class="progress-bar" cx="30" cy="30" r="25"></circle>
+              </svg>
+               <button class="play-btn">
+                <img src="./images/play-button-svgrepo-com.svg"/>
+            </div>
+            <div class="info">
+              <h3>الشاعر</h3>
+              <small>00:00 / 00:00</small>
+            </div>
+            <img class="thumbnail" src="./images/img3.jpg" alt="author" />
+            <audio src="./audio/audio.m4a"></audio>
+          </div>
+        </div>
+      </section>
+
+      <section class="operator" id="operator">
+        <div class="container">
+        <h1 class="main-heading">اشترك الآن</h1>
+
+        <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="carousel-slide">
+                <img src="./images/logo.png" alt="شعار المشغل 1">
+                <button>اشترك</button>
+            </div>
+            <div class="carousel-slide">
+                <img src="./images/MTNLOGO.png" alt="شعار المشغل 2">
+                <button>اشترك</button>
+            </div>
+            <div class="carousel-slide">
+                <img src="./images/sudani-new.png" alt="شعار المشغل 3">
+                <button>اشترك</button>
+            </div>
+            </div>
+        <div class="carousel-dots">
+            </div>
+    </div>
+        </div>
+      </section>
+
+      <footer class="p-5">
+        <div
+          class="container d-flex justify-content-between align-items-center align-items-lg-end flex-column flex-lg-row"
+        >
+          <p>&copy; جميع الحقوق محفوظة</p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="./dist/aos.js"></script>
+    <script>
+      AOS.init({
+        easing: "ease-in-out-sine",
+      });
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
