@@ -200,7 +200,7 @@ footer {
 /*end footer*/
 /* start landing */
 .landing {
-  background-image: url(/images/background.jpg);
+  background-image: url(https://raw.githubusercontent.com/minalfatih/Digital-plus-qawafi/refs/heads/main/images/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
